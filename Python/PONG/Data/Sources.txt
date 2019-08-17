@@ -1,0 +1,18 @@
+﻿Sources:
+
+https://www.pygame.org/news
+https://stackoverflow.com/
+https://www.gimp.org/docs/ - do wcinania piłek
+
+    Data:
+    	Images:
+            ball - https://anime.desktopnexus.com/wallpaper/1152217/
+            ball2 - https://www.theserenitycentre.co.uk/blue-moons-planetary-wake-ups-shake-ups/
+            ball3 - https://www.redbubble.com/people/b3nny/works/32493323-lenny-face?p=photographic-print
+            board - https://ar.pinterest.com/pin/370210031851508909/?lp=true
+            board2 - http://mini.eastday.com/a/180609123439875.html
+            board3 - https://i.pinimg.com/originals/92/d1/46/92d1466d5e39c20927ee6bc642e24e17.jpg
+
+        Music
+            ThemeMusic - https://www.youtube.com/watch?v=sNjtroPFQ1s
+            ThemeMusic2 - https://www.youtube.com/watch?v=BBGEG21CGo0

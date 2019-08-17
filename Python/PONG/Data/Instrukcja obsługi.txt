@@ -1,0 +1,10 @@
+﻿Instrukcja obsługi:
+
+1. W celu zmiany tła, kolorów, poziomu trudności, należy zmienić plik konfiguracujny "Pong.json"
+2. Zmiana szybkości piłki - klawisze : 1-9.
+3. Reset gry - klawisz R
+4. Pauza/Odpauzaowanie - klawisz P
+5. Gracz1 (player1 po lewej stronie) - sterowanie za pomocą strzałek
+6. Gracz2 (player 2 po prawej stronie) - sterowanie za pomocą strzałek UP, DOWN
+7. Gra rozpoczyna się po wywołaniu na obiekcie typu PongGame funkcji play()
+8. Na początku otwiera się okiengv ko startowe - tam jest wybór czy gra jest dla 2 osób czy z komputerem

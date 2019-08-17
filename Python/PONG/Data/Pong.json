@@ -1,0 +1,10 @@
+{
+  "background_image" : "Data/boards/board.jpg",
+  "ball_image" : "Data/balls/ball2.png",
+  "theme_music" : "Data/music/ThemeMusic.mp3",
+  "player1_color" : [255, 255, 255],
+  "player2_color" : [255, 255, 255],
+  "player2_speed": 20,
+  "game_level" : 15,
+  "font_color" : [120, 120, 120]
+}
