@@ -35,7 +35,7 @@ public class Board extends JPanel {
     }
 
     private void loadImage() {
-        ImageIcon ii = new ImageIcon("images/weiwuxian.jpg");
+        ImageIcon ii = new ImageIcon("src/images/weiwuxian.jpg");
         i = ii.getImage();
     }
 
