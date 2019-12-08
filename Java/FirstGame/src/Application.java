@@ -1,8 +1,8 @@
+import javax.swing.*;
 import java.awt.*;
-import javax.swing.JFrame;
 
 public class Application extends JFrame {
-    public Application(){
+    public Application() {
         initUI();
     }
 
@@ -10,7 +10,7 @@ public class Application extends JFrame {
 
         add(new Board(Color.BLACK));
 
-        setSize(250,200);
+        setSize(250, 200);
 
         setTitle("RoziaApplication");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -18,7 +18,7 @@ public class Application extends JFrame {
     }
 
     public static void main(String[] args) {
-        EventQueue.invokeLater(()->{
+        EventQueue.invokeLater(() -> {
             Application ex = new Application();
             ex.setVisible(true);
         });

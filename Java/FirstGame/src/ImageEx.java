@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class ImageEx extends JFrame {
-    public ImageEx(){
+    public ImageEx() {
         initUI();
     }
 
@@ -17,7 +17,7 @@ public class ImageEx extends JFrame {
     }
 
     public static void main(String[] args) {
-        EventQueue.invokeLater(()->{
+        EventQueue.invokeLater(() -> {
             ImageEx ex = new ImageEx();
             ex.setVisible(true);
         });

@@ -3,7 +3,7 @@ import java.awt.*;
 
 public class Donut extends JFrame {
 
-    public Donut(Color c){
+    public Donut(Color c) {
         initUI(c);
     }
 
@@ -11,7 +11,7 @@ public class Donut extends JFrame {
 
         add(new Board(c));
 
-        setSize(330,330);
+        setSize(330, 330);
 
         setTitle("Donut");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -19,7 +19,7 @@ public class Donut extends JFrame {
     }
 
     public static void main(String[] args) {
-        EventQueue.invokeLater(()->{
+        EventQueue.invokeLater(() -> {
             Donut ex = new Donut(Color.pink);
             Donut ex2 = new Donut(Color.black);
             ex2.setVisible(true);
