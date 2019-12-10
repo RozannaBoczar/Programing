@@ -1,74 +1,111 @@
 package animation;
 
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyListener;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.Toolkit;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
-public class AnimationBoard extends JPanel implements ActionListener {
+public class AnimationBoard extends JPanel implements Runnable {
 
     private final int B_WIDTH = 350;
     private final int B_HEIGHT = 350;
-    private final int INITIAL_X = 0;
-    private final int INITIAL_Y = 30;
+    private final int INITIAL_X = -40;
+    private final int INITIAL_Y = -40;
     private final int DELAY = 25;
-    private int move_x = 1;
-    private int move_y = 1;
 
     private Image star;
-    private Timer timer;
-    private int x,y;
+    private Thread animator;
+    private int x, y;
 
-    public AnimationBoard(){
-        initAnimationBoard();
+    public AnimationBoard() {
+
+        initBoard();
     }
 
-    private void loadImage(){
+    private void loadImage() {
+
         ImageIcon ii = new ImageIcon("src/images/star.png");
         star = ii.getImage();
     }
-    
-    private void initAnimationBoard() {
-        setBackground(Color.black);
-        setPreferredSize(new Dimension(B_WIDTH,B_HEIGHT));
-        
+
+    private void initBoard() {
+
+        setBackground(Color.BLACK);
+        setPreferredSize(new Dimension(B_WIDTH, B_HEIGHT));
+
         loadImage();
-        
+
         x = INITIAL_X;
         y = INITIAL_Y;
-        
-        timer = new Timer(DELAY,this); //co opóźnienie, wywołana bedzie funkcja actionPerformed()
-        timer.start();
-    }
-    @Override
-    public void paintComponent(Graphics g){
-        super.paintComponent(g);
-        
-        drawStart(g);
     }
 
-    private void drawStart(Graphics g) {
-        g.drawImage(star,x,y,this);
+    @Override
+    public void addNotify() {
+        super.addNotify();
+
+        animator = new Thread(this);
+        animator.start();
+    }
+
+    @Override
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+
+        drawStar(g);
+    }
+
+    private void drawStar(Graphics g) {
+
+        g.drawImage(star, x, y, this);
         Toolkit.getDefaultToolkit().sync();
     }
 
+    private void cycle() {
+
+        x += 1;
+        y += 1;
+
+        if (y > B_HEIGHT) {
+
+            y = INITIAL_Y;
+            x = INITIAL_X;
+        }
+    }
+
     @Override
-    public void actionPerformed(ActionEvent e) {
-        x+=move_x;
-        y+=move_y;
+    public void run() {
 
-        if(y>B_HEIGHT-40 || y<0){
-           move_y = -move_y;
-           //move_x = -move_x;
-            //x=-x;
-        }
-        if(x>B_WIDTH-40 || x<0){
-            move_x = -move_x;
-            //move_y = -move_y;
-            //x=-x;
-        }
-        repaint();
+        long beforeTime, timeDiff, sleep;
 
+        beforeTime = System.currentTimeMillis();
+
+        while (true) {
+
+            cycle();
+            repaint();
+
+            timeDiff = System.currentTimeMillis() - beforeTime;
+            sleep = DELAY - timeDiff;
+
+            if (sleep < 0) {
+                sleep = 2;
+            }
+
+            try {
+                Thread.sleep(sleep);
+            } catch (InterruptedException e) {
+
+                String msg = String.format("Thread interrupted: %s", e.getMessage());
+
+                JOptionPane.showMessageDialog(this, msg, "Error",
+                        JOptionPane.ERROR_MESSAGE);
+            }
+
+            beforeTime = System.currentTimeMillis();
+        }
     }
 }
