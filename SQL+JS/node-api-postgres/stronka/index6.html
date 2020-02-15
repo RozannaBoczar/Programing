@@ -1,0 +1,54 @@
+<HTML>
+<head>
+<title>Love Hotel</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="style.css">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
+</head>
+<body style="height: auto; overflow: hidden;">
+<div align="center">
+<h1>LOVE HOTEL</h1>
+</div>
+<div class="bg"></div>
+<div id="containers2">
+	<div id="rcorners22" align = 'center'>
+		<form action="/deleterez" method="post">
+  Wybierz rezerwację do usunięcia:<br></br>
+<!--- moze zeby sie rozwijalo??-->
+  <select id=my_select name = "r"></select>
+	<br></br>
+	<input type="submit" value="Usuń rezerwację" id=usun  >
+  <br>
+</form>
+</div>
+</div>
+</body>
+<script>
+$(function() {
+            $.getJSON('rezerwacje.json', function(data) {
+							console.log("pobranie jsona");
+							var list = data;
+						//	console.log(list);
+							var sel = document.getElementById('my_select');
+							for(var i = 0; i < data.length; i++) {
+								var opt = document.createElement('option');
+								opt.innerHTML = list[i]['imie'] + " " + list[i]['nazwisko'] + " - pokój: "+list[i]['p'] ;
+								opt.value = list[i]['r'];
+								sel.appendChild(opt);
+							}
+							var d = document.getElementById('rcorners22');
+							var m = document.getElementById('usun');
+							if( $('#my_select').has('option').length <= 0 ) {
+							//	console.log('meh');
+								m.style.display = "none";
+								var p = document.createElement('p');
+								p.id='napis';
+								p.innerHTML = "Brak Rezerwacji do usunięcia!";
+								d.appendChild(p);
+							}
+
+            });
+        });
+
+</script>
+</HTML>

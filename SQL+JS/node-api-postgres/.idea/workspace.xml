@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8cf87771-6025-4648-9dd6-7c41d6350ec6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/queries.js" beforeDir="false" afterPath="$PROJECT_DIR$/queries.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stronka/index7.html" beforeDir="false" afterPath="$PROJECT_DIR$/stronka/index7.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stronka/index8.html" beforeDir="false" afterPath="$PROJECT_DIR$/stronka/index8.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stronka/index9.html" beforeDir="false" afterPath="$PROJECT_DIR$/stronka/index9.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stronka/pokoje.json" beforeDir="false" afterPath="$PROJECT_DIR$/stronka/pokoje.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stronka/rezerwacje.json" beforeDir="false" afterPath="$PROJECT_DIR$/stronka/rezerwacje.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stronka/standardy.html" beforeDir="false" afterPath="$PROJECT_DIR$/stronka/standardy.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stronka/wolnepokoje.json" beforeDir="false" afterPath="$PROJECT_DIR$/stronka/wolnepokoje.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stronka/zajetepokoje.json" beforeDir="false" afterPath="$PROJECT_DIR$/stronka/zajetepokoje.json" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1WfTTWG2QwSdadtDFEq06j8unvE" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8cf87771-6025-4648-9dd6-7c41d6350ec6" name="Default Changelist" comment="" />
+      <created>1578672886145</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1578672886145</updated>
+      <workItem from="1579539664240" duration="5000" />
+      <workItem from="1579554647605" duration="7000" />
+    </task>
+    <servers />
+  </component>
+</project>

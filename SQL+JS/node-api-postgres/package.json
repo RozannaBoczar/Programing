@@ -1,0 +1,27 @@
+{
+  "name": "node-api-postgres",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "pg": "^7.15.1",
+    "pg-format": "^1.0.4"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RozannaBoczar/node-api-postgres.git"
+  },
+  "bugs": {
+    "url": "https://github.com/RozannaBoczar/node-api-postgres/issues"
+  },
+  "homepage": "https://github.com/RozannaBoczar/node-api-postgres#readme",
+  "description": ""
+}

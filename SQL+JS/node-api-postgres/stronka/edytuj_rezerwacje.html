@@ -1,0 +1,189 @@
+<HTML>
+<head>
+<title>Love Hotel</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="style.css">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
+</head>
+<body style="height: auto; overflow: hidden;">
+<div align="center">
+<h1>LOVE HOTEL</h1>
+</div>
+<div class="bg"></div>
+<div id="containers2">
+	<div id="rcorners22" align = 'center'>
+		<form action="/updaterez" method="post">
+  Wybierz rezerwację do edytowania:<br></br>
+<!--- moze zeby sie rozwijalo??-->
+  <select id=my_select name = "r"></select>
+  <br>Wybierz standard<br>
+	<select name="s" id= standard class= standard>
+		 <option value="1">Królewski</option>
+		 <option value="2">500+</option>
+		 <option value="3">Nudny</option>
+		 <option value="4">Friendzone</option>
+		 <option value="5">Trio</option>
+		 <option value="6">Trójkąty i kwadraty</option>
+  </select>
+  <br>Numer pokoju<br>
+  <div id = free_rooms></div>
+
+  <!--<select id=my_select name = "p"  onchange="window.location.reload()"></select>-->
+  <select id=select_room name = "p"  ></select>
+	<br></br>
+	<input type="submit" value="Zapisz zmiany"  id=robRezerwacje >
+  <br>
+</form>
+</div>
+</div>
+</body>
+<script>
+$(function() {
+            $.getJSON('rezerwacje.json', function(data) {
+							console.log("pobranie jsona");
+							var list = data;
+						//	console.log(list);
+							var sel = document.getElementById('my_select');
+							for(var i = 0; i < data.length; i++) {
+								var opt = document.createElement('option');
+								opt.innerHTML = list[i]['imie'] + " " + list[i]['nazwisko'] + " - pokój: "+list[i]['p'] ;
+								opt.value = [list[i]['r'],list[i]['p']];
+								sel.appendChild(opt);
+							}
+							var m = document.getElementById('robRezerwacje');
+							var d = document.getElementById('free_rooms');
+							if( $('#my_select').has('option').length <= 0 ) {
+							//	console.log('meh');
+								m.style.display = "none";
+								var p = document.createElement('p');
+								p.id='napis';
+								p.innerHTML = "Brak Rezerwacji do edycji!";
+								d.appendChild(p);
+							}
+
+            });
+            $.getJSON('wolnepokoje.json', function(data) {
+							var list = data;
+							var x = document.getElementById("standard").value;
+							//location.reload();
+							/*x.onchange = function() {
+    						//location.reload();
+								console.log("aAAAAAA");
+
+							};*/
+							console.log(x);
+
+							var sel = document.getElementById('select_room');
+							for(var i = 0; i < data.length; i++) {
+								console.log(list[i]['s']);
+								if (list[i]['s'] == x){
+								var opt = document.createElement('option');
+								opt.innerHTML = list[i]['p'];
+								opt.value = list[i]['p'];
+								sel.appendChild(opt);
+								}
+							}
+							var m = document.getElementById('robRezerwacje');
+							var d = document.getElementById('free_rooms');
+
+							if( $('#select_room').has('option').length <= 0 ) {
+							//	console.log('meh');
+								m.style.display = "none";
+								sel.style.display = "none";
+								var p = document.createElement('p');
+								p.id='napis';
+								p.innerHTML = "Brak pokojów  w tym standardzie :(";
+								d.appendChild(p);
+							}
+							else{
+							//	var e = document.getElementById('napis');
+								//d.removeChild(e);
+									m.style.display = "block";
+								sel.style.display = "block";
+							}
+							var m = document.getElementById('robRezerwacje');
+							var d = document.getElementById('free_rooms');
+							if( $('#my_select').has('option').length <= 0 ) {
+							//	console.log('meh');
+								sel.style.display = "none";
+								m.style.display = "none";
+								var p = document.createElement('p');
+								p.id='napis';
+								p.innerHTML = "Brak Rezerwacji do edycji!";
+								d.appendChild(p);
+							}
+            });
+
+            $(document).ready(function () {
+    				            $(".standard").change(function () {
+    											$.getJSON('wolnepokoje.json', function(data) {
+														$("#select_room").empty();
+    												var list = data;
+    												var x = document.getElementById("standard").value;
+    												console.log(x);
+    												//location.reload();
+    												/*x.onchange = function() {
+    					    						//location.reload();
+    													console.log("aAAAAAA");
+
+    												};*/
+    												console.log(x);
+    												console.log("aaaaaaaa");
+
+    												var sel = document.getElementById('select_room');
+    												for(var i = 0; i < data.length; i++) {
+    													console.log(list[i]['s']);
+
+    													if (list[i]['s'] == x){
+    													//var old_opt = document.getElementById('option');
+    													//sel.children('option').remove();
+    													var opt = document.createElement('option');
+
+    													opt.innerHTML = list[i]['p'];
+    													opt.value = list[i]['p'];
+    													sel.appendChild(opt);
+    													}
+    												}
+														var m = document.getElementById('robRezerwacje');
+														var d = document.getElementById('free_rooms');
+
+
+														if( $('#select_room').has('option').length <= 0 ) {
+														//	console.log('meh');
+														m.style.display = "none";
+														sel.style.display = "none";
+														if(document.getElementById('napis')!=null){
+														var e1 = document.getElementById('napis');
+														d.removeChild(e1);
+													}
+														var p = document.createElement('p');
+														p.id='napis';
+														p.innerHTML = "Brak pokojów  w tym standardzie :(";
+														d.appendChild(p);}
+														else{
+															var e = document.getElementById('napis');
+															d.removeChild(e);
+															m.style.display = "block";
+															sel.style.display = "block";
+														}
+
+														if( $('#my_select').has('option').length <= 0 ) {
+														//	console.log('meh');
+															sel.style.display = "none";
+															m.style.display = "none";
+															var p = document.createElement('p');
+															p.id='napis';
+															p.innerHTML = "Brak Rezerwacji do edycji!";
+															d.appendChild(p);
+														}
+    					            });
+    				                //location.reload();
+    				                //alert('Reloading Page');
+    				            });
+    				        });
+
+
+        });
+
+</script>
+</HTML>
